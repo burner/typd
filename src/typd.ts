@@ -8,10 +8,32 @@ export class Typd {
 		this.data = getNestedObject(this.input, this.path);
 	}
 
-	get safeString(): string {
-		return typeof this.data == "string"
+	getValue<T>(nullValue: T): T {
+		return typeof this.data == typeof nullValue
 			? this.data
-			: "";
+			: nullValue;
+	}
+
+	get safeString(): string {
+		return this.getValue<string>("");
+	}
+
+	get safeNumber(): number {
+		return this.getValue<number>(Number.NaN);
+	}
+
+	get safeBoolean(): boolean {
+		return this.getValue<boolean>(false);
+	}
+
+	get safeArray(): any[] {
+		return Array.isArray(this.data)
+			? this.data
+			: [];
+	}
+
+	get safeObject(): {} {
+		return this.getValue<({})>({});
 	}
 }
 
