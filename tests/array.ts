@@ -15,7 +15,7 @@ describe('Array tests', () => {
 		expect(v.safeArray).to.eql(msg);
   	});
 
-    it('Not an string', () => {
+    it('Not an array', () => {
 		const v = t({"foo": 1}, "foo");
 		expect(v.safeArray).to.eql([]);
   	});
@@ -25,10 +25,16 @@ describe('Array tests', () => {
 		expect(v.safeArray).to.eql([]);
   	});
 
-    it('Nested string', () => {
+    it('Nested array', () => {
 		const msg = [1, 2];
 		const v = t({a: { b: msg }}, "a.b");
 		expect(v.safeArray).to.eql(msg);
+  	});
+
+    it('Nested array fail', () => {
+		const msg = [1, 2];
+		const v = t({a: { b: msg }}, "a.d");
+		expect(v.safeArray).to.eql([]);
   	});
 
     it('Undefined', () => {

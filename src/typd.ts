@@ -9,7 +9,7 @@ export class Typd {
 	}
 
 	getValue<T>(nullValue: T): T {
-		return typeof this.data == typeof nullValue
+		return typeof this.data == typeof nullValue && this.data != null
 			? this.data
 			: nullValue;
 	}
@@ -34,6 +34,30 @@ export class Typd {
 
 	get safeObject(): {} {
 		return this.getValue<({})>({});
+	}
+
+	get isString(): boolean {
+		return typeof this.data === "string";
+	}
+
+	get isNumber(): boolean {
+		return typeof this.data === "number";
+	}
+
+	get isBoolean(): boolean {
+		return typeof this.data === "boolean";
+	}
+
+	get isArray(): boolean {
+		return Array.isArray(this.data);
+	}
+
+	get isNull(): boolean {
+		return this.data == null;
+	}
+
+	get isUndefined(): boolean {
+		return this.data === undefined;
 	}
 }
 

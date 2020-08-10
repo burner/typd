@@ -2,8 +2,8 @@
 	"name": "typd",
 	"version": "1.0.0",
 	"description": "",
-	"main": "dist/index.js",
-	"types": "dist/index.d.ts",
+	"main": "dist/src/typd.js",
+	"types": "dist/src/typd.d.ts",
 	"directories": {
 		"test": "test"
 	},

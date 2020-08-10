@@ -31,6 +31,12 @@ describe('String tests', () => {
 		expect(v.safeString).to.equal(msg);
   	});
 
+    it('Nested string fail', () => {
+		const msg = "Hello World";
+		const v = t({a: { b: msg }}, "a.c");
+		expect(v.safeString).to.equal("");
+  	});
+
     it('Undefined', () => {
 		const v = t(undefined, "a.b");
 		expect(v.safeString).to.equal("");
