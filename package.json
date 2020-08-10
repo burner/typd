@@ -1,9 +1,9 @@
 {
-	"name": "typd",
+	"name": "typyts",
 	"version": "1.0.0",
 	"description": "",
-	"main": "dist/src/typd.js",
-	"types": "dist/src/typd.d.ts",
+	"main": "dist/src/typyts.js",
+	"types": "dist/src/typyts.d.ts",
 	"directories": {
 		"test": "test"
 	},

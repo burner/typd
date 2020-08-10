@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import 'mocha';
 
-import { t } from "../src/typd";
+import { t } from "../src/typyts";
 
 describe('Number tests', () => {
     it('Null', () => {
