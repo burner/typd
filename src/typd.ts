@@ -36,6 +36,10 @@ export class Typd {
 		return this.getValue<({})>({});
 	}
 
+	public safeGenericObject<T = any>(): T {
+		return <T>this.getValue<({})>({});
+	}
+
 	get isString(): boolean {
 		return typeof this.data === "string";
 	}
@@ -50,6 +54,10 @@ export class Typd {
 
 	get isArray(): boolean {
 		return Array.isArray(this.data);
+	}
+
+	get isObject(): boolean {
+		return typeof this.data === "object";
 	}
 
 	get isNull(): boolean {
