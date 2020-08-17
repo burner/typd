@@ -39,7 +39,7 @@ expect(v.safeArray).to.eql(msg);
 
 ## Interface
 
-```typescripb
+```typescript
 export declare class Typd {
     input: any;
     path: string[];
