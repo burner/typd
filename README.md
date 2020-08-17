@@ -63,3 +63,7 @@ export declare class Typd {
 
 export declare function t(input: any, path: string | string[]): Typd;
 ```
+
+## Misc
+
+Inspired by [typy](https://www.npmjs.com/package/typy).
