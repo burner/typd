@@ -57,7 +57,7 @@ export class Typd {
 	}
 
 	get isObject(): boolean {
-		return typeof this.data === "object";
+		return typeof this.data === "object" && this.data !== null;
 	}
 
 	get isNull(): boolean {

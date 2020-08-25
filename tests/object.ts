@@ -23,12 +23,14 @@ describe('Object tests', () => {
     it('Not an object', () => {
 		const v = t(1337, "foo");
 		expect(v.safeObject).to.eql({});
+		expect(v.isObject).to.eql(false);
   	});
 
     it('Nested object', () => {
 		const msg = { a: 2 };
 		const v = t({a: { b: msg }}, "a.b");
 		expect(v.safeObject).to.eql(msg);
+		expect(v.isObject).to.eql(true);
   	});
 
     it('Nested object fail', () => {

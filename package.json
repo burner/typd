@@ -1,6 +1,6 @@
 {
 	"name": "typyts",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "",
 	"main": "dist/src/typyts.js",
 	"types": "dist/src/typyts.d.ts",
