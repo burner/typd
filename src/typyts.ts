@@ -79,7 +79,7 @@ export function t(input: any, path: string | string[]) : Typd {
 }
 
 function getNestedObject(data: any, path: string[]): any {
-	if(path.length == 0) {
+	if((path?.length ?? 0) == 0) {
 		return data;
 	} else if(data != null
 		&& typeof data === "object"

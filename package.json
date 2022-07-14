@@ -1,6 +1,6 @@
 {
 	"name": "typyts",
-	"version": "1.0.3",
+	"version": "1.0.5",
 	"description": "",
 	"main": "dist/src/typyts.js",
 	"types": "dist/src/typyts.d.ts",
@@ -16,7 +16,7 @@
 		"lint:test": "tslint tests/**/*.ts",
 		"test": "npm-run-all lint test:prepare test:execute",
 		"test:prepare": "npm run build",
-		"test:execute": "mocha dist/tests --recursive",
+		"test:execute": "env TS_NODE_PROJECT=\"tsconfig.testing.json\" mocha --require ts-node/register 'tests/**/*.ts'",
 		"prepublish": "npm run test"
 	},
 	"keywords": [],
